@@ -1,0 +1,28 @@
+
+
+##! CC=clang-mp-3.7
+#! CC=gcc
+#! PROG=filter
+#! IMPLM=sll
+#! CFLAGS=-O3 -Wall -Wextra -pedantic
+#! LDFLAGS= 
+
+
+compile:
+    help: compile
+    dependencies:
+        - ${PROG}.c 
+        - ${IMPLM}.c
+        - ${IMPLM}.h
+    formula: >
+        rm $PROG;
+        $CC -c ${IMPLM}.c $CFLAGS -o ${IMPLM}.o;
+        $CC -c ${PROG}.c $CFLAGS -o ${PROG}.o;
+        $CC -o $PROG ${PROG}.o ${IMPLM}.o;
+        rm ${PROG}.o;
+        rm ${IMPLM}.o;
+    output:
+        - $PROG
+
+
+
