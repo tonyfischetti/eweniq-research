@@ -1,2 +1,5 @@
 you can use recursion as long as you use >= -O2 optimization
 otherwise no TCO
+
+my singly-linked-list performed the same (maybe better) as glib's
+singly-linked list when optimized (but it was much slower when it was not)
