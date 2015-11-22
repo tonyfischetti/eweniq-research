@@ -1,0 +1,2 @@
+you can use recursion as long as you use >= -O2 optimization
+otherwise no TCO

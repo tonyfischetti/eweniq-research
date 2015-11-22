@@ -2,9 +2,9 @@
 
 ##! CC=clang-mp-3.7
 #! CC=gcc
-#! PROG=filter
-#! IMPLM=sll-recur
-#! CFLAGS=-O3 -Wall -Wextra -pedantic
+#! PROG=eweniq
+#! IMPLM=sll-recur-poly
+#! CFLAGS=-O0 -g -Wall -Wextra -pedantic
 #! LDFLAGS= 
 
 
