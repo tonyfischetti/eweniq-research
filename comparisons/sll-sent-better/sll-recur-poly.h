@@ -5,7 +5,7 @@ typedef struct _item item;
 
 struct _item {
     void* data;
-    int* sentinel;
+    int sentinel;
     item* next;
 };
 

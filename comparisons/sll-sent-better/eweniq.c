@@ -31,12 +31,10 @@ int main(void){
     item* my_list = NULL;
     item* tail = NULL;
 
-    char* tmpd = malloc(sizeof(char) * 1 + 1);
-    *tmpd = "Z";
+    char* tmpd = malloc(sizeof(char) * 2 + 1);
+    *tmpd = "ZZ";
     my_list = insert(my_list, (void*)(tmpd));
-    char* tmps = malloc(sizeof(int));
-    *tmps = 1;
-    my_list->sentinel = tmps;
+    my_list->sentinel = 1;
 
     tail = my_list;
 

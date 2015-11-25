@@ -25,9 +25,6 @@ item* insert(item* the_first, void* the_data){
     item* new_first = malloc(sizeof(item));
     new_first->data = the_data;
     new_first->next = the_first;
-    int* s = malloc(sizeof(int)*1);
-    *s = 0;
-    new_first->sentinel = s;
     return new_first;
 }
 
@@ -40,14 +37,12 @@ item* find(item* an_item, item* tail, void* looking_for,
         return retval;
     }
 
-    void* old_sentinel_data;
-    old_sentinel_data = tail->data;
     tail->data = looking_for;
 
     item* result;
     result = find_helper(an_item, looking_for, cmp_fn);
 
-    tail->data = old_sentinel_data;
+    /* tail->data = old_sentinel_data; */
     return result;
 }
 
@@ -57,7 +52,7 @@ item* find_helper(item* an_item, void* looking_for, int (*cmp_fn)(item*, void*))
     int result = (*cmp_fn)(an_item, looking_for);
 
     if(result==0){
-        if(*(an_item->sentinel)){
+        if(an_item->sentinel){
             item* retval = NULL;
             return retval;
         }

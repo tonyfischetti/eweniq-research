@@ -1,8 +1,8 @@
 ---
 sake version: 0.9.6
 files:
-  eweniq: {sha: 1912ba7de96e65276fa7fc9b65e7c449f34aff9e}
-  eweniq.c: {sha: cd8e8f0f7e14bba50df1ff003569cabf04a90377}
-  sll-recur-poly.c: {sha: fd4f5c1b0c8adf4264887450824a72242bf5e986}
-  sll-recur-poly.h: {sha: 5cd12f90f89babefc3031efea541ac6bdf91a632}
+  eweniq: {sha: 12d3ea34a7e8503e730f0ad5ee18b14481e84aa3}
+  eweniq.c: {sha: 3eed34d39dd45711cb300e1d744e81ff0da90d98}
+  sll-recur-poly.c: {sha: bad1846243e60e1fcfb2a06a203390dfe7ef1130}
+  sll-recur-poly.h: {sha: 8731c96043764d9c9d1d3204d89b1a255db994cb}
 ...

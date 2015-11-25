@@ -12,10 +12,16 @@ my singly-linked list recursive NON-polymorphic no sentinel O0
 my singly-linked list recursive NON-polymorphic no sentinel O3
 
 ./test.sh  92.31s user 1.12s system 97% cpu 1:36.09 total
-my singly-linked list recursive NON-polymorphic SENTINEL O0
+my singly-linked list recursive polymorphic BAD SENTINEL O0
 
 ./test.sh  20.85s user 0.16s system 99% cpu 21.136 total
-my singly-linked list recursive NON-polymorphic SENTINEL O3
+my singly-linked list recursive polymorphic BAD SENTINEL O3
+
+./test.sh  87.55s user 0.65s system 98% cpu 1:29.33 total
+my singly-linked list recursive polymorphic GOOD? SENTINEL O0
+
+./test.sh  22.75s user 0.18s system 99% cpu 23.007 total
+my singly-linked list recursive polymorphic GOOD? SENTINEL O3
 
 ./test.sh  29.60s user 0.20s system 98% cpu 30.188 total
 glib's singly-linked list O0
