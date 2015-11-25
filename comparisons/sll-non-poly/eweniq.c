@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "sll-recur-poly.h"
+#include "sll-recur-nonpoly.h"
 
 /* If you set *line to null, and *length to zero, before the call,
  * then getline allocates the initial buffer for you by calling malloc */
@@ -19,11 +19,6 @@ void print_item(item* an_item){
 void (*disp_fn)(item*) = &print_item;
 
 
-int item_compare(item* first, void* second){
-    char* f_d = (char*)(first->data);
-    return strcmp(f_d, (char*)second);
-}
-int (*cmp_fn)(item*, void*) = &item_compare;
 
 
 int main(void){
@@ -34,10 +29,10 @@ int main(void){
         char* the_string = malloc(n * sizeof(char) + 1);
         strcpy(the_string, line);
 
-        if(!find(my_list, (void*)(the_string), cmp_fn)){
+        if(!find(my_list, the_string)){
             printf("%s", line);
             fflush(stdout);
-            my_list = insert(my_list, (void*)(the_string));
+            my_list = insert(my_list, the_string);
         }
     }
     free(line);

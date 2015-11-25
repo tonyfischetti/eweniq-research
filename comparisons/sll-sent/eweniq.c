@@ -29,12 +29,22 @@ int (*cmp_fn)(item*, void*) = &item_compare;
 int main(void){
 
     item* my_list = NULL;
+    item* tail = NULL;
+
+    /* first */
+    n = getline(&line, &length, stdin);
+    printf("%s", line);
+    fflush(stdout);
+    char* the_string = malloc(n * sizeof(char) + 1);
+    strcpy(the_string, line);
+    my_list = insert(my_list, (void*)(the_string));
+    tail = my_list;
 
     while((n = getline(&line, &length, stdin)) >= 0){
         char* the_string = malloc(n * sizeof(char) + 1);
         strcpy(the_string, line);
 
-        if(!find(my_list, (void*)(the_string), cmp_fn)){
+        if(!find(my_list, tail, (void*)(the_string), cmp_fn)){
             printf("%s", line);
             fflush(stdout);
             my_list = insert(my_list, (void*)(the_string));

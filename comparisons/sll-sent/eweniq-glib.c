@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "sll-recur-poly.h"
+#include <glib.h>
 
 /* If you set *line to null, and *length to zero, before the call,
  * then getline allocates the initial buffer for you by calling malloc */
@@ -12,32 +12,24 @@ size_t length = 0u;
 ssize_t n;
 
 
-
-void print_item(item* an_item){
-    printf("item: %s", (char *)(an_item->data));
+gint item_compare(gconstpointer first, gconstpointer second){
+    return strcmp((char*)first, (char*)second);
 }
-void (*disp_fn)(item*) = &print_item;
-
-
-int item_compare(item* first, void* second){
-    char* f_d = (char*)(first->data);
-    return strcmp(f_d, (char*)second);
-}
-int (*cmp_fn)(item*, void*) = &item_compare;
+gint (*cmp_fn)(gconstpointer, gconstpointer) = &item_compare;
 
 
 int main(void){
 
-    item* my_list = NULL;
+    GSList *my_list = NULL;
 
     while((n = getline(&line, &length, stdin)) >= 0){
         char* the_string = malloc(n * sizeof(char) + 1);
         strcpy(the_string, line);
 
-        if(!find(my_list, (void*)(the_string), cmp_fn)){
+        if(!g_slist_find_custom(my_list, the_string, cmp_fn)){
             printf("%s", line);
             fflush(stdout);
-            my_list = insert(my_list, (void*)(the_string));
+            my_list = g_slist_prepend(my_list, the_string); 
         }
     }
     free(line);

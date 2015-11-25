@@ -1,3 +1,6 @@
+getline is just as fast as fgets and let's you get a string of
+arbitrarily large length
+
 you can use recursion as long as you use >= -O2 optimization
 otherwise no TCO
 

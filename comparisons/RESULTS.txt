@@ -1,0 +1,34 @@
+
+./test.sh  78.30s user 0.31s system 99% cpu 1:18.73 total
+my singly-linked list recursive polymorphic no sentinel O0
+
+./test.sh  20.53s user 0.08s system 99% cpu 20.642 total
+my singly-linked list recursive polymorphic no sentinel O3
+
+./test.sh  54.85s user 0.35s system 99% cpu 55.325 total
+my singly-linked list recursive NON-polymorphic no sentinel O0
+
+./test.sh  18.89s user 0.10s system 99% cpu 19.063 total
+my singly-linked list recursive NON-polymorphic no sentinel O3
+
+./test.sh  92.31s user 1.12s system 97% cpu 1:36.09 total
+my singly-linked list recursive NON-polymorphic SENTINEL O0
+
+./test.sh  20.85s user 0.16s system 99% cpu 21.136 total
+my singly-linked list recursive NON-polymorphic SENTINEL O3
+
+./test.sh  29.60s user 0.20s system 98% cpu 30.188 total
+glib's singly-linked list O0
+
+./test.sh  21.40s user 0.09s system 99% cpu 21.526 total
+glib's singly-linked list O3
+
+./test.sh  0.09s user 0.04s system 98% cpu 0.126 total
+glib's balanced binary tree O0
+
+./test.sh  0.09s user 0.04s system 98% cpu 0.125 total
+glib's balanced binary tree O3
+
+./test.sh  2.19s user 0.02s system 100% cpu 2.185 total
+glib's balanced binary tree O3 (with ALL WORDS in /usr/share/dict (235,886))
+
