@@ -8,13 +8,20 @@ struct _item {
     void* data;
     item* left;
     item* right;
+    item* parent;
 };
 
 item* make_node(void*);
 
-bool insert(item*, void*, int (*cmp_fn)(item*, void*));
+bool insert(item*, item*, int (*cmp_fn)(item*, item*));
 
-void display(item*);
+int count_nodes(item*);
+
+item* shift_left(item*, item*, int (*cmp_fn)(item*, item*));
+
+void display(FILE*, item*);
+
+void write_dot_file(const char*, item*);
 
 #endif
 
