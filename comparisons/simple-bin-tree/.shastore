@@ -1,8 +1,8 @@
 ---
 sake version: 0.9.6
 files:
-  driver: {sha: 3748eecc2ebe6f62881971a9e2a488c2f138921c}
-  driver.c: {sha: 0262ccf0f2859deb889da2bb52123ad0d585a364}
-  simple-bin-tree.c: {sha: a64bf00af33857b2c7fe0679c51ed45b20b71142}
-  simple-bin-tree.h: {sha: 1f2e2492d7b5b19a908f1f52933546d8a51c5887}
+  driver: {sha: 4f97960f7ae833c36326e6294db86cc3b373229f}
+  driver.c: {sha: d05733a395e289b93101b4760208450559f0d6df}
+  simple-bin-tree.c: {sha: 24c026ff038c4e2d4f31a2a51838783d4990ce40}
+  simple-bin-tree.h: {sha: 0c7a8ecccdc020c4a89a27824bead0046993b72e}
 ...

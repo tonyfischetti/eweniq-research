@@ -104,6 +104,8 @@ item* shift(item* root, item* move, const char* direction,
 
 
 int imbalanced_p(item* root){
+    if(!root)
+        return 0;
     int left  = count_nodes(root->left);
     int right = count_nodes(root->right);
     if(left > (right+1))
@@ -140,6 +142,28 @@ item* balance(item* root, item* move, int (*cmp_fn)(item*, item*)){
     return NULL;
 }
 
+void balance_children(item* root, item* move, int (*cmp_fn)(item*, item*)){
+    printf("balance children called\n");
+    if(!move)
+        return;
+    printf("move is \n");
+    display(stdout, move);
+    int im_l = imbalanced_p(move->left);
+    printf("maybe\n");
+    int im_r = imbalanced_p(move->right);
+    printf("left and right are %d and %d\n", im_l, im_r);
+    if(im_l == 0 && im_r == 0)
+        return;
+    if(im_l !=0){
+        move = balance(root, move->left, cmp_fn);
+        return balance_children(root, move->left, cmp_fn);
+    }
+    if(im_r != 0){
+        move = balance(root, move->right, cmp_fn);
+        return balance_children(root, move->right, cmp_fn);
+    }
+    return;
+}
 
 
 void display(FILE* file, item* root){

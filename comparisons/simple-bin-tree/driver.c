@@ -64,8 +64,11 @@ int main(void){
     printf("there\n");
     fflush(stdout);
     printf("imbalanced_p: %i\n", imbalanced_p(root));
-    printf("everywhere\n");
+    printf("attempting to balance children\n");
     fflush(stdout);
+    balance_children(root, root, cmp_fn);
+    write_dot_file("three.txt", root);
+
 
 
     printf("total: %d\n", count_nodes(root));

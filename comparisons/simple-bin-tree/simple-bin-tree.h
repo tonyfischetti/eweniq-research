@@ -23,6 +23,8 @@ int imbalanced_p(item* root);
 
 item* balance(item*, item*, int (*cmp_fn)(item*, item*));
 
+void balance_children(item*, item*, int (*cmp_fn)(item*, item*));
+
 void display(FILE*, item*);
 
 void write_dot_file(const char*, item*);
