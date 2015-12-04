@@ -33,7 +33,6 @@ bool insert(item* root, item* new_node, int (*cmp_fn)(item*, item*)){
     }
 
     int result = (*cmp_fn)(root, new_node);
-    printf("result %i\n", result);
 
     if(result == 0)
         return false;
@@ -42,7 +41,6 @@ bool insert(item* root, item* new_node, int (*cmp_fn)(item*, item*)){
         if(!root->left){
             root->left = new_node;
             root->left->parent = root;
-            printf("here\n");
             return true;
         }
         return insert(root->left, new_node, cmp_fn);
@@ -69,45 +67,77 @@ int count_nodes(item* root){
 }
 
 
-item* shift_left(item* root, item* move, int (*cmp_fn)(item*, item*)){
-
-    item* replacement = move->right;
-    /* cant move right */
+item* shift(item* root, item* move, const char* direction,
+        int (*cmp_fn)(item*, item*)){
+    item* replacement;
+    if(strcmp(direction, "left")==0)
+        replacement = move->right;
+    else
+        replacement = move->left;
+    /* cant move */
     if(!replacement)
         return root;
     item* parent = move->parent;
-    printf("parent is: %s\n", (char*)parent->data);
     replacement->parent = parent;
-    move->right=NULL;
+    if(strcmp(direction, "left")==0)
+        move->right=NULL;
+    else
+        move->left=NULL;
 
-    printf("moving this\n");
-    display(stdout, move);
-    printf("\n");
-    printf("to this\n");
-    display(stdout, replacement);
-    printf("\n");
     insert(replacement, move, cmp_fn);
 
-    printf("makes: \n");
-    display(stdout, replacement);
-
-    int comp = cmp_fn(root, move);
-
-    printf("there\n");
-    if(comp==0)
+    if(!replacement->parent){
+        printf("there?\n");
         return replacement;
+    }
 
-    printf("everywhere\n");
-    printf("parent is: %s\n", (char*)parent->data);
-    comp = cmp_fn(parent, replacement);
+    int comp = cmp_fn(parent, replacement);
 
     if(comp > 0)
         parent->left = replacement;
     else
         parent->right = replacement;
         
-
+    return replacement;
     return root;
+}
+
+
+int imbalanced_p(item* root){
+    int left  = count_nodes(root->left);
+    int right = count_nodes(root->right);
+    if(left > (right+1))
+        return -1;
+    if(right > (left+1))
+        return 1;
+    return 0;
+}
+
+item* balance(item* root, item* move, int (*cmp_fn)(item*, item*)){
+    printf("move is now:\n");
+    display(stdout, move);
+    printf("is it imbalanced?: %d\n", imbalanced_p(move));
+    if(imbalanced_p(move)==0){
+        printf("returning\n");
+        return move;
+    }
+    if(imbalanced_p(move)==-1){
+        item* root = NULL;
+        printf("shifting right\n");
+        move = shift(root, move, "right", cmp_fn);
+        printf("made it here\n");
+        return balance(root, move, cmp_fn);
+    }
+    if(imbalanced_p(move)==1){
+        item* root = NULL;
+        printf("shifting left\n");
+        move = shift(root, move, "left", cmp_fn);
+        printf("in move is now:\n");
+        display(stdout, move);
+        fflush(stdout);
+        return balance(root, move, cmp_fn);
+    }
+    return NULL;
 }
 
 
@@ -142,3 +172,4 @@ void write_dot_file(const char* filename, item* root){
     fclose(file);
     return;
 }
+

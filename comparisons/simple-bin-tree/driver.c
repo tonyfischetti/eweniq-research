@@ -23,6 +23,8 @@ void (*disp_fn)(item*) = &print_item;
 int item_compare(item* first, item* second){
     char* f_d = (char*)(first->data);
     char* s_d = (char*)(second->data);
+    printf("comparing %s and %s\n", f_d, s_d);
+    printf("answer %d\n", strcmp(f_d, s_d));
     return strcmp(f_d, s_d);
 }
 int (*cmp_fn)(item*, item*) = &item_compare;
@@ -47,8 +49,6 @@ int main(void){
         the_string[n-1] = '\0';
         item* new_node = make_node((void*)(the_string));
         if(insert(root, new_node, cmp_fn)){
-            printf("inserted %s whose parent is %s\n",
-                    line, (char*)new_node->parent->data);
             printf("%s", line);
             fflush(stdout);
         }
@@ -56,16 +56,16 @@ int main(void){
     free(line);
 
     write_dot_file("one.txt", root);
-    root = shift_left(root, root->right, cmp_fn);
-    printf("is it an error in display?\n");
+    printf("imbalanced_p: %i\n", imbalanced_p(root));
+    root = balance(root, root, cmp_fn);
+    printf("here\n");
+    fflush(stdout);
     write_dot_file("two.txt", root);
-    printf("nope\n");
-    /* root = shift_left(root, root, cmp_fn); */
-    /* write_dot_file("three.txt", root); */
-    /* root = shift_left(root, root, cmp_fn); */
-    /* write_dot_file("four.txt", root); */
-    /* root = shift_right(root, root, cmp_fn); */
-    /* write_dot_file("five.txt", root); */
+    printf("there\n");
+    fflush(stdout);
+    printf("imbalanced_p: %i\n", imbalanced_p(root));
+    printf("everywhere\n");
+    fflush(stdout);
 
 
     printf("total: %d\n", count_nodes(root));

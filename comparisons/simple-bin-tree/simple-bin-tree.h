@@ -17,7 +17,11 @@ bool insert(item*, item*, int (*cmp_fn)(item*, item*));
 
 int count_nodes(item*);
 
-item* shift_left(item*, item*, int (*cmp_fn)(item*, item*));
+item* shift(item*, item*, const char*, int (*cmp_fn)(item*, item*));
+
+int imbalanced_p(item* root);
+
+item* balance(item*, item*, int (*cmp_fn)(item*, item*));
 
 void display(FILE*, item*);
 
