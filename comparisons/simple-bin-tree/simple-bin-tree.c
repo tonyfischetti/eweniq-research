@@ -71,7 +71,6 @@ void shift(item** root_address, const char* direction,
         int (*cmp_fn)(item*, item*)){
     item* replacement;
     item* move = *root_address;
-    printf("shifting: %s\n", (char*)move->data);
     if(strcmp(direction, "left")==0)
         replacement = move->right;
     else
@@ -117,19 +116,10 @@ int imbalanced_p(item* root){
 
 int balance(item** root_address, int (*cmp_fn)(item*, item*)){
     item* move = *root_address;
-    printf("balanced called on %s\n", (char*)(*root_address)->data);
-    display(stdout, *root_address);
     write_dot_file("try.txt", move);
     if(imbalanced_p(*root_address)==0){
-        printf("balanced!\n");
-        printf("why dont you stop!\n");
-        /* if(strcmp((char*)move->data, "12")==0){ */
-        /*         write_dot_file("try.txt", move); */
-        /*     exit(0); */
-        /* } */
         return 1;
     }
-    printf("it's imbalanced\n");
     if(imbalanced_p(*root_address)==-1){
         shift(root_address, "right", cmp_fn);
         balance(root_address, cmp_fn);
@@ -143,18 +133,12 @@ int balance(item** root_address, int (*cmp_fn)(item*, item*)){
 
 
 int balance_children(item** root_address, int (*cmp_fn)(item*, item*)){
-    printf("balance_children called\n");
     item* move = *root_address;
     if(!move)
         return 1;
-    printf("called with\n");
-    display(stdout, move);
     int im_c = imbalanced_p(move);
-    printf("here\n");
     if(im_c != 0){
-        printf("there\n");
         balance(&move, cmp_fn);
-        printf("everywhere\n");
     }
     int im_l = imbalanced_p(move->left);
     int im_r = imbalanced_p(move->right);
@@ -168,7 +152,6 @@ int balance_children(item** root_address, int (*cmp_fn)(item*, item*)){
 
 int balance_tree(item** root_address, int (*cmp_fn)(item*, item*)){
     balance(root_address, cmp_fn);
-    printf("balanced once\n");
     balance_children(root_address, cmp_fn);
     return 1;
 }

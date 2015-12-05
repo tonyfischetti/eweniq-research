@@ -1,4 +1,5 @@
 strict digraph TheTree {
-"b" -> "a" [label="left"];
-"b" -> "c" [label="right"];
+"Black leadership today is all play" -> "Big up to my philosophy majors" [label="left"];
+"Big up to my philosophy majors" -> "All dem mercy, now watch this" [label="left"];
+"Black leadership today is all play" -> "But somebody gotta have sin in it" [label="right"];
 }

@@ -38,3 +38,8 @@ glib's balanced binary tree O3
 ./test.sh  2.19s user 0.02s system 100% cpu 2.185 total
 glib's balanced binary tree O3 (with ALL WORDS in /usr/share/dict (235,886))
 
+./test.sh  0.09s user 0.03s system 98% cpu 0.123 total
+my simple non-balancing binary tree on shuffled words 03
+
+./test.sh  19.82s user 0.12s system 99% cpu 20.032 total   
+my simple non-balancing binary tree on NONshuffled words 03   WHY FASTER THAN LINKED LIST??!

@@ -54,27 +54,9 @@ int main(void){
     }
     free(line);
 
-    write_dot_file("one.txt", root);
-    balance_tree(&root, cmp_fn);
-    /* balance(&(root->left), cmp_fn); */
-    /* balance(&(root->left), cmp_fn); */
-    /* balance(&(root->right), cmp_fn); */
-    /* #<{(| balance(&(root->right), cmp_fn); |)}># */
-    /* #<{(| balance_tree(&root, cmp_fn); |)}># */
-    printf("done second\n");
-    write_dot_file("two.txt", root);
-    /* shift(something, "right", cmp_fn); */
-    /* display(stdout, *something); */
-    /* shift(something, "right", cmp_fn); */
-    /* display(stdout, *something); */
-    /* shift(something, "right", cmp_fn); */
-    /* display(stdout, *something); */
-    /* shift(something, "right", cmp_fn); */
-    /* display(stdout, *something); */
-    /* shift(something, "right", cmp_fn); */
-    /* display(stdout, *something); */
-    /* shift(something, "right", cmp_fn); */
-    /* display(stdout, *something); */
+    /* balance_tree(&root, cmp_fn); */
+    /* printf("done second\n"); */
+    /* write_dot_file("balanced.txt", root); */
 
 
     return 0;
