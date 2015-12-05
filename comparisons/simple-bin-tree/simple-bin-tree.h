@@ -17,13 +17,15 @@ bool insert(item*, item*, int (*cmp_fn)(item*, item*));
 
 int count_nodes(item*);
 
-item* shift(item*, item*, const char*, int (*cmp_fn)(item*, item*));
+void shift(item**, const char*, int (*cmp_fn)(item*, item*));
 
 int imbalanced_p(item* root);
 
-item* balance(item*, item*, int (*cmp_fn)(item*, item*));
+int balance(item**, int (*cmp_fn)(item*, item*));
 
-void balance_children(item*, item*, int (*cmp_fn)(item*, item*));
+int balance_children(item**, int (*cmp_fn)(item*, item*));
+
+int balance_tree(item**, int (*cmp_fn)(item*, item*));
 
 void display(FILE*, item*);
 

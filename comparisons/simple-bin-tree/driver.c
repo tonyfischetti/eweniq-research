@@ -23,8 +23,6 @@ void (*disp_fn)(item*) = &print_item;
 int item_compare(item* first, item* second){
     char* f_d = (char*)(first->data);
     char* s_d = (char*)(second->data);
-    printf("comparing %s and %s\n", f_d, s_d);
-    printf("answer %d\n", strcmp(f_d, s_d));
     return strcmp(f_d, s_d);
 }
 int (*cmp_fn)(item*, item*) = &item_compare;
@@ -40,6 +38,7 @@ int main(void){
         strcpy(the_string, line);
         the_string[n-1] = '\0';
         root = make_node((void*)the_string);
+        printf("%s", line);
     }
 
 
@@ -56,24 +55,18 @@ int main(void){
     free(line);
 
     write_dot_file("one.txt", root);
-    printf("imbalanced_p: %i\n", imbalanced_p(root));
-    root = balance(root, root, cmp_fn);
-    printf("here\n");
-    fflush(stdout);
+    balance(&root, cmp_fn);
+    printf("done first\n");
+    write_dot_file("inter.txt", root);
+    /* balance_children(&root, cmp_fn); */
+    balance(&(root->left), cmp_fn);
+    /* balance(&(root->right), cmp_fn); */
+    printf("done second\n");
+    /* balance(&(root->right), cmp_fn); */
+    /* balance_tree(&root, cmp_fn); */
+    /* balance_children(&root, cmp_fn); */
     write_dot_file("two.txt", root);
-    printf("there\n");
-    fflush(stdout);
-    printf("imbalanced_p: %i\n", imbalanced_p(root));
-    printf("attempting to balance children\n");
-    fflush(stdout);
-    balance_children(root, root, cmp_fn);
-    write_dot_file("three.txt", root);
 
-
-
-    printf("total: %d\n", count_nodes(root));
-    printf("left: %d\n", count_nodes(root->left));
-    printf("right: %d\n", count_nodes(root->right));
 
     return 0;
 }

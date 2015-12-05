@@ -67,16 +67,17 @@ int count_nodes(item* root){
 }
 
 
-item* shift(item* root, item* move, const char* direction,
+void shift(item** root_address, const char* direction,
         int (*cmp_fn)(item*, item*)){
     item* replacement;
+    item* move = *root_address;
     if(strcmp(direction, "left")==0)
         replacement = move->right;
     else
         replacement = move->left;
     /* cant move */
     if(!replacement)
-        return root;
+        return;
     item* parent = move->parent;
     replacement->parent = parent;
     if(strcmp(direction, "left")==0)
@@ -86,20 +87,17 @@ item* shift(item* root, item* move, const char* direction,
 
     insert(replacement, move, cmp_fn);
 
-    if(!replacement->parent){
-        printf("there?\n");
-        return replacement;
-    }
+    *root_address = replacement;
+    if(!parent)
+        return;
 
     int comp = cmp_fn(parent, replacement);
-
     if(comp > 0)
         parent->left = replacement;
     else
         parent->right = replacement;
         
-    return replacement;
-    return root;
+    return;
 }
 
 
@@ -115,76 +113,75 @@ int imbalanced_p(item* root){
     return 0;
 }
 
-item* balance(item* root, item* move, int (*cmp_fn)(item*, item*)){
-    printf("move is now:\n");
-    display(stdout, move);
-    printf("is it imbalanced?: %d\n", imbalanced_p(move));
+int balance(item** root_address, int (*cmp_fn)(item*, item*)){
+    item* move = *root_address;
+    printf("balanced called on %s\n", (char*)move->data);
+    if(strcmp((char*)move->data, "e")==0)
+        display(stdout, move);
+    if(strcmp((char*)move->data, "d")==0)
+        display(stdout, move);
     if(imbalanced_p(move)==0){
-        printf("returning\n");
-        return move;
+        printf("balanced!\n");
+        return 1;
     }
+    printf("it's imbalanced\n");
     if(imbalanced_p(move)==-1){
-        item* root = NULL;
-        printf("shifting right\n");
-        move = shift(root, move, "right", cmp_fn);
-        printf("made it here\n");
-        return balance(root, move, cmp_fn);
+        shift(root_address, "right", cmp_fn);
+        balance(root_address, cmp_fn);
     }
     if(imbalanced_p(move)==1){
-        item* root = NULL;
-        printf("shifting left\n");
-        move = shift(root, move, "left", cmp_fn);
-        printf("in move is now:\n");
-        display(stdout, move);
-        fflush(stdout);
-        return balance(root, move, cmp_fn);
+        shift(root_address, "left", cmp_fn);
+        balance(root_address, cmp_fn);
     }
-    return NULL;
+    return 1;
 }
 
-void balance_children(item* root, item* move, int (*cmp_fn)(item*, item*)){
-    printf("balance children called\n");
+
+int balance_children(item** root_address, int (*cmp_fn)(item*, item*)){
+    printf("balance_children called\n");
+    item* move = *root_address;
     if(!move)
-        return;
-    printf("move is \n");
+        return 1;
+    printf("called with\n");
     display(stdout, move);
+    int im_c = imbalanced_p(move);
+    printf("here\n");
+    if(im_c != 0){
+        printf("there\n");
+        balance(&move, cmp_fn);
+        printf("everywhere\n");
+    }
     int im_l = imbalanced_p(move->left);
-    printf("maybe\n");
     int im_r = imbalanced_p(move->right);
-    printf("left and right are %d and %d\n", im_l, im_r);
     if(im_l == 0 && im_r == 0)
-        return;
-    if(im_l !=0){
-        move = balance(root, move->left, cmp_fn);
-        return balance_children(root, move->left, cmp_fn);
-    }
-    if(im_r != 0){
-        move = balance(root, move->right, cmp_fn);
-        return balance_children(root, move->right, cmp_fn);
-    }
-    return;
+        return 1;
+    return (balance_children(&(move->left), cmp_fn) +
+            balance_children(&(move->right), cmp_fn));
+}
+
+int balance_tree(item** root_address, int (*cmp_fn)(item*, item*)){
+    balance(root_address, cmp_fn);
+    printf("balanced once\n");
+    balance_children(root_address, cmp_fn);
+    return 1;
 }
 
 
 void display(FILE* file, item* root){
-
     if(!root)
         return;
-
     if(root->left){
         fprintf(file,
                 "\"%s\" -> \"%s\" [label=\"left\"];\n", (char*)root->data,
                 (char*)root->left->data);
         display(file, root->left);
     }
-
     if(root->right){
         fprintf(file,
                 "\"%s\" -> \"%s\" [label=\"right\"];\n", (char*)root->data, 
                 (char*)root->right->data);
         display(file, root->right);
     }
-
 } 
 
 
