@@ -1,189 +1,837 @@
-1
-10
-11
-12
-13
-14
-15
-2
-3
-4
-5
-6
-7
-8
-9
-balanced called on 1
-"1" -> "10" [label="right"];
-"10" -> "11" [label="right"];
-"11" -> "12" [label="right"];
-"12" -> "13" [label="right"];
-"13" -> "14" [label="right"];
-"14" -> "15" [label="right"];
-"15" -> "2" [label="right"];
-"2" -> "3" [label="right"];
-"3" -> "4" [label="right"];
-"4" -> "5" [label="right"];
-"5" -> "6" [label="right"];
-"6" -> "7" [label="right"];
-"7" -> "8" [label="right"];
-"8" -> "9" [label="right"];
+z
+y
+x
+w
+v
+u
+t
+s
+r
+q
+p
+o
+n
+m
+l
+k
+j
+i
+h
+g
+f
+e
+d
+c
+b
+a
+balanced called on z
+"z" -> "y" [label="left"];
+"y" -> "x" [label="left"];
+"x" -> "w" [label="left"];
+"w" -> "v" [label="left"];
+"v" -> "u" [label="left"];
+"u" -> "t" [label="left"];
+"t" -> "s" [label="left"];
+"s" -> "r" [label="left"];
+"r" -> "q" [label="left"];
+"q" -> "p" [label="left"];
+"p" -> "o" [label="left"];
+"o" -> "n" [label="left"];
+"n" -> "m" [label="left"];
+"m" -> "l" [label="left"];
+"l" -> "k" [label="left"];
+"k" -> "j" [label="left"];
+"j" -> "i" [label="left"];
+"i" -> "h" [label="left"];
+"h" -> "g" [label="left"];
+"g" -> "f" [label="left"];
+"f" -> "e" [label="left"];
+"e" -> "d" [label="left"];
+"d" -> "c" [label="left"];
+"c" -> "b" [label="left"];
+"b" -> "a" [label="left"];
 it's imbalanced
-shifting: 1
-balanced called on 10
-"10" -> "1" [label="left"];
-"10" -> "11" [label="right"];
-"11" -> "12" [label="right"];
-"12" -> "13" [label="right"];
-"13" -> "14" [label="right"];
-"14" -> "15" [label="right"];
-"15" -> "2" [label="right"];
-"2" -> "3" [label="right"];
-"3" -> "4" [label="right"];
-"4" -> "5" [label="right"];
-"5" -> "6" [label="right"];
-"6" -> "7" [label="right"];
-"7" -> "8" [label="right"];
-"8" -> "9" [label="right"];
+shifting: z
+balanced called on y
+"y" -> "x" [label="left"];
+"x" -> "w" [label="left"];
+"w" -> "v" [label="left"];
+"v" -> "u" [label="left"];
+"u" -> "t" [label="left"];
+"t" -> "s" [label="left"];
+"s" -> "r" [label="left"];
+"r" -> "q" [label="left"];
+"q" -> "p" [label="left"];
+"p" -> "o" [label="left"];
+"o" -> "n" [label="left"];
+"n" -> "m" [label="left"];
+"m" -> "l" [label="left"];
+"l" -> "k" [label="left"];
+"k" -> "j" [label="left"];
+"j" -> "i" [label="left"];
+"i" -> "h" [label="left"];
+"h" -> "g" [label="left"];
+"g" -> "f" [label="left"];
+"f" -> "e" [label="left"];
+"e" -> "d" [label="left"];
+"d" -> "c" [label="left"];
+"c" -> "b" [label="left"];
+"b" -> "a" [label="left"];
+"y" -> "z" [label="right"];
 it's imbalanced
-shifting: 10
-balanced called on 11
-"11" -> "10" [label="left"];
-"10" -> "1" [label="left"];
-"11" -> "12" [label="right"];
-"12" -> "13" [label="right"];
-"13" -> "14" [label="right"];
-"14" -> "15" [label="right"];
-"15" -> "2" [label="right"];
-"2" -> "3" [label="right"];
-"3" -> "4" [label="right"];
-"4" -> "5" [label="right"];
-"5" -> "6" [label="right"];
-"6" -> "7" [label="right"];
-"7" -> "8" [label="right"];
-"8" -> "9" [label="right"];
+shifting: y
+balanced called on x
+"x" -> "w" [label="left"];
+"w" -> "v" [label="left"];
+"v" -> "u" [label="left"];
+"u" -> "t" [label="left"];
+"t" -> "s" [label="left"];
+"s" -> "r" [label="left"];
+"r" -> "q" [label="left"];
+"q" -> "p" [label="left"];
+"p" -> "o" [label="left"];
+"o" -> "n" [label="left"];
+"n" -> "m" [label="left"];
+"m" -> "l" [label="left"];
+"l" -> "k" [label="left"];
+"k" -> "j" [label="left"];
+"j" -> "i" [label="left"];
+"i" -> "h" [label="left"];
+"h" -> "g" [label="left"];
+"g" -> "f" [label="left"];
+"f" -> "e" [label="left"];
+"e" -> "d" [label="left"];
+"d" -> "c" [label="left"];
+"c" -> "b" [label="left"];
+"b" -> "a" [label="left"];
+"x" -> "y" [label="right"];
+"y" -> "z" [label="right"];
 it's imbalanced
-shifting: 11
-balanced called on 12
-"12" -> "11" [label="left"];
-"11" -> "10" [label="left"];
-"10" -> "1" [label="left"];
-"12" -> "13" [label="right"];
-"13" -> "14" [label="right"];
-"14" -> "15" [label="right"];
-"15" -> "2" [label="right"];
-"2" -> "3" [label="right"];
-"3" -> "4" [label="right"];
-"4" -> "5" [label="right"];
-"5" -> "6" [label="right"];
-"6" -> "7" [label="right"];
-"7" -> "8" [label="right"];
-"8" -> "9" [label="right"];
+shifting: x
+balanced called on w
+"w" -> "v" [label="left"];
+"v" -> "u" [label="left"];
+"u" -> "t" [label="left"];
+"t" -> "s" [label="left"];
+"s" -> "r" [label="left"];
+"r" -> "q" [label="left"];
+"q" -> "p" [label="left"];
+"p" -> "o" [label="left"];
+"o" -> "n" [label="left"];
+"n" -> "m" [label="left"];
+"m" -> "l" [label="left"];
+"l" -> "k" [label="left"];
+"k" -> "j" [label="left"];
+"j" -> "i" [label="left"];
+"i" -> "h" [label="left"];
+"h" -> "g" [label="left"];
+"g" -> "f" [label="left"];
+"f" -> "e" [label="left"];
+"e" -> "d" [label="left"];
+"d" -> "c" [label="left"];
+"c" -> "b" [label="left"];
+"b" -> "a" [label="left"];
+"w" -> "x" [label="right"];
+"x" -> "y" [label="right"];
+"y" -> "z" [label="right"];
 it's imbalanced
-shifting: 12
-balanced called on 13
-"13" -> "12" [label="left"];
-"12" -> "11" [label="left"];
-"11" -> "10" [label="left"];
-"10" -> "1" [label="left"];
-"13" -> "14" [label="right"];
-"14" -> "15" [label="right"];
-"15" -> "2" [label="right"];
-"2" -> "3" [label="right"];
-"3" -> "4" [label="right"];
-"4" -> "5" [label="right"];
-"5" -> "6" [label="right"];
-"6" -> "7" [label="right"];
-"7" -> "8" [label="right"];
-"8" -> "9" [label="right"];
+shifting: w
+balanced called on v
+"v" -> "u" [label="left"];
+"u" -> "t" [label="left"];
+"t" -> "s" [label="left"];
+"s" -> "r" [label="left"];
+"r" -> "q" [label="left"];
+"q" -> "p" [label="left"];
+"p" -> "o" [label="left"];
+"o" -> "n" [label="left"];
+"n" -> "m" [label="left"];
+"m" -> "l" [label="left"];
+"l" -> "k" [label="left"];
+"k" -> "j" [label="left"];
+"j" -> "i" [label="left"];
+"i" -> "h" [label="left"];
+"h" -> "g" [label="left"];
+"g" -> "f" [label="left"];
+"f" -> "e" [label="left"];
+"e" -> "d" [label="left"];
+"d" -> "c" [label="left"];
+"c" -> "b" [label="left"];
+"b" -> "a" [label="left"];
+"v" -> "w" [label="right"];
+"w" -> "x" [label="right"];
+"x" -> "y" [label="right"];
+"y" -> "z" [label="right"];
 it's imbalanced
-shifting: 13
-balanced called on 14
-"14" -> "13" [label="left"];
-"13" -> "12" [label="left"];
-"12" -> "11" [label="left"];
-"11" -> "10" [label="left"];
-"10" -> "1" [label="left"];
-"14" -> "15" [label="right"];
-"15" -> "2" [label="right"];
-"2" -> "3" [label="right"];
-"3" -> "4" [label="right"];
-"4" -> "5" [label="right"];
-"5" -> "6" [label="right"];
-"6" -> "7" [label="right"];
-"7" -> "8" [label="right"];
-"8" -> "9" [label="right"];
+shifting: v
+balanced called on u
+"u" -> "t" [label="left"];
+"t" -> "s" [label="left"];
+"s" -> "r" [label="left"];
+"r" -> "q" [label="left"];
+"q" -> "p" [label="left"];
+"p" -> "o" [label="left"];
+"o" -> "n" [label="left"];
+"n" -> "m" [label="left"];
+"m" -> "l" [label="left"];
+"l" -> "k" [label="left"];
+"k" -> "j" [label="left"];
+"j" -> "i" [label="left"];
+"i" -> "h" [label="left"];
+"h" -> "g" [label="left"];
+"g" -> "f" [label="left"];
+"f" -> "e" [label="left"];
+"e" -> "d" [label="left"];
+"d" -> "c" [label="left"];
+"c" -> "b" [label="left"];
+"b" -> "a" [label="left"];
+"u" -> "v" [label="right"];
+"v" -> "w" [label="right"];
+"w" -> "x" [label="right"];
+"x" -> "y" [label="right"];
+"y" -> "z" [label="right"];
 it's imbalanced
-shifting: 14
-balanced called on 15
-"15" -> "14" [label="left"];
-"14" -> "13" [label="left"];
-"13" -> "12" [label="left"];
-"12" -> "11" [label="left"];
-"11" -> "10" [label="left"];
-"10" -> "1" [label="left"];
-"15" -> "2" [label="right"];
-"2" -> "3" [label="right"];
-"3" -> "4" [label="right"];
-"4" -> "5" [label="right"];
-"5" -> "6" [label="right"];
-"6" -> "7" [label="right"];
-"7" -> "8" [label="right"];
-"8" -> "9" [label="right"];
+shifting: u
+balanced called on t
+"t" -> "s" [label="left"];
+"s" -> "r" [label="left"];
+"r" -> "q" [label="left"];
+"q" -> "p" [label="left"];
+"p" -> "o" [label="left"];
+"o" -> "n" [label="left"];
+"n" -> "m" [label="left"];
+"m" -> "l" [label="left"];
+"l" -> "k" [label="left"];
+"k" -> "j" [label="left"];
+"j" -> "i" [label="left"];
+"i" -> "h" [label="left"];
+"h" -> "g" [label="left"];
+"g" -> "f" [label="left"];
+"f" -> "e" [label="left"];
+"e" -> "d" [label="left"];
+"d" -> "c" [label="left"];
+"c" -> "b" [label="left"];
+"b" -> "a" [label="left"];
+"t" -> "u" [label="right"];
+"u" -> "v" [label="right"];
+"v" -> "w" [label="right"];
+"w" -> "x" [label="right"];
+"x" -> "y" [label="right"];
+"y" -> "z" [label="right"];
 it's imbalanced
-shifting: 15
-balanced called on 2
-"2" -> "15" [label="left"];
-"15" -> "14" [label="left"];
-"14" -> "13" [label="left"];
-"13" -> "12" [label="left"];
-"12" -> "11" [label="left"];
-"11" -> "10" [label="left"];
-"10" -> "1" [label="left"];
-"2" -> "3" [label="right"];
-"3" -> "4" [label="right"];
-"4" -> "5" [label="right"];
-"5" -> "6" [label="right"];
-"6" -> "7" [label="right"];
-"7" -> "8" [label="right"];
-"8" -> "9" [label="right"];
+shifting: t
+balanced called on s
+"s" -> "r" [label="left"];
+"r" -> "q" [label="left"];
+"q" -> "p" [label="left"];
+"p" -> "o" [label="left"];
+"o" -> "n" [label="left"];
+"n" -> "m" [label="left"];
+"m" -> "l" [label="left"];
+"l" -> "k" [label="left"];
+"k" -> "j" [label="left"];
+"j" -> "i" [label="left"];
+"i" -> "h" [label="left"];
+"h" -> "g" [label="left"];
+"g" -> "f" [label="left"];
+"f" -> "e" [label="left"];
+"e" -> "d" [label="left"];
+"d" -> "c" [label="left"];
+"c" -> "b" [label="left"];
+"b" -> "a" [label="left"];
+"s" -> "t" [label="right"];
+"t" -> "u" [label="right"];
+"u" -> "v" [label="right"];
+"v" -> "w" [label="right"];
+"w" -> "x" [label="right"];
+"x" -> "y" [label="right"];
+"y" -> "z" [label="right"];
+it's imbalanced
+shifting: s
+balanced called on r
+"r" -> "q" [label="left"];
+"q" -> "p" [label="left"];
+"p" -> "o" [label="left"];
+"o" -> "n" [label="left"];
+"n" -> "m" [label="left"];
+"m" -> "l" [label="left"];
+"l" -> "k" [label="left"];
+"k" -> "j" [label="left"];
+"j" -> "i" [label="left"];
+"i" -> "h" [label="left"];
+"h" -> "g" [label="left"];
+"g" -> "f" [label="left"];
+"f" -> "e" [label="left"];
+"e" -> "d" [label="left"];
+"d" -> "c" [label="left"];
+"c" -> "b" [label="left"];
+"b" -> "a" [label="left"];
+"r" -> "s" [label="right"];
+"s" -> "t" [label="right"];
+"t" -> "u" [label="right"];
+"u" -> "v" [label="right"];
+"v" -> "w" [label="right"];
+"w" -> "x" [label="right"];
+"x" -> "y" [label="right"];
+"y" -> "z" [label="right"];
+it's imbalanced
+shifting: r
+balanced called on q
+"q" -> "p" [label="left"];
+"p" -> "o" [label="left"];
+"o" -> "n" [label="left"];
+"n" -> "m" [label="left"];
+"m" -> "l" [label="left"];
+"l" -> "k" [label="left"];
+"k" -> "j" [label="left"];
+"j" -> "i" [label="left"];
+"i" -> "h" [label="left"];
+"h" -> "g" [label="left"];
+"g" -> "f" [label="left"];
+"f" -> "e" [label="left"];
+"e" -> "d" [label="left"];
+"d" -> "c" [label="left"];
+"c" -> "b" [label="left"];
+"b" -> "a" [label="left"];
+"q" -> "r" [label="right"];
+"r" -> "s" [label="right"];
+"s" -> "t" [label="right"];
+"t" -> "u" [label="right"];
+"u" -> "v" [label="right"];
+"v" -> "w" [label="right"];
+"w" -> "x" [label="right"];
+"x" -> "y" [label="right"];
+"y" -> "z" [label="right"];
+it's imbalanced
+shifting: q
+balanced called on p
+"p" -> "o" [label="left"];
+"o" -> "n" [label="left"];
+"n" -> "m" [label="left"];
+"m" -> "l" [label="left"];
+"l" -> "k" [label="left"];
+"k" -> "j" [label="left"];
+"j" -> "i" [label="left"];
+"i" -> "h" [label="left"];
+"h" -> "g" [label="left"];
+"g" -> "f" [label="left"];
+"f" -> "e" [label="left"];
+"e" -> "d" [label="left"];
+"d" -> "c" [label="left"];
+"c" -> "b" [label="left"];
+"b" -> "a" [label="left"];
+"p" -> "q" [label="right"];
+"q" -> "r" [label="right"];
+"r" -> "s" [label="right"];
+"s" -> "t" [label="right"];
+"t" -> "u" [label="right"];
+"u" -> "v" [label="right"];
+"v" -> "w" [label="right"];
+"w" -> "x" [label="right"];
+"x" -> "y" [label="right"];
+"y" -> "z" [label="right"];
+it's imbalanced
+shifting: p
+balanced called on o
+"o" -> "n" [label="left"];
+"n" -> "m" [label="left"];
+"m" -> "l" [label="left"];
+"l" -> "k" [label="left"];
+"k" -> "j" [label="left"];
+"j" -> "i" [label="left"];
+"i" -> "h" [label="left"];
+"h" -> "g" [label="left"];
+"g" -> "f" [label="left"];
+"f" -> "e" [label="left"];
+"e" -> "d" [label="left"];
+"d" -> "c" [label="left"];
+"c" -> "b" [label="left"];
+"b" -> "a" [label="left"];
+"o" -> "p" [label="right"];
+"p" -> "q" [label="right"];
+"q" -> "r" [label="right"];
+"r" -> "s" [label="right"];
+"s" -> "t" [label="right"];
+"t" -> "u" [label="right"];
+"u" -> "v" [label="right"];
+"v" -> "w" [label="right"];
+"w" -> "x" [label="right"];
+"x" -> "y" [label="right"];
+"y" -> "z" [label="right"];
+it's imbalanced
+shifting: o
+balanced called on n
+"n" -> "m" [label="left"];
+"m" -> "l" [label="left"];
+"l" -> "k" [label="left"];
+"k" -> "j" [label="left"];
+"j" -> "i" [label="left"];
+"i" -> "h" [label="left"];
+"h" -> "g" [label="left"];
+"g" -> "f" [label="left"];
+"f" -> "e" [label="left"];
+"e" -> "d" [label="left"];
+"d" -> "c" [label="left"];
+"c" -> "b" [label="left"];
+"b" -> "a" [label="left"];
+"n" -> "o" [label="right"];
+"o" -> "p" [label="right"];
+"p" -> "q" [label="right"];
+"q" -> "r" [label="right"];
+"r" -> "s" [label="right"];
+"s" -> "t" [label="right"];
+"t" -> "u" [label="right"];
+"u" -> "v" [label="right"];
+"v" -> "w" [label="right"];
+"w" -> "x" [label="right"];
+"x" -> "y" [label="right"];
+"y" -> "z" [label="right"];
 balanced!
 why dont you stop!
-done first
-balanced called on 15
-"15" -> "14" [label="left"];
-"14" -> "13" [label="left"];
-"13" -> "12" [label="left"];
-"12" -> "11" [label="left"];
-"11" -> "10" [label="left"];
-"10" -> "1" [label="left"];
+balanced once
+balance_children called
+called with
+"n" -> "m" [label="left"];
+"m" -> "l" [label="left"];
+"l" -> "k" [label="left"];
+"k" -> "j" [label="left"];
+"j" -> "i" [label="left"];
+"i" -> "h" [label="left"];
+"h" -> "g" [label="left"];
+"g" -> "f" [label="left"];
+"f" -> "e" [label="left"];
+"e" -> "d" [label="left"];
+"d" -> "c" [label="left"];
+"c" -> "b" [label="left"];
+"b" -> "a" [label="left"];
+"n" -> "o" [label="right"];
+"o" -> "p" [label="right"];
+"p" -> "q" [label="right"];
+"q" -> "r" [label="right"];
+"r" -> "s" [label="right"];
+"s" -> "t" [label="right"];
+"t" -> "u" [label="right"];
+"u" -> "v" [label="right"];
+"v" -> "w" [label="right"];
+"w" -> "x" [label="right"];
+"x" -> "y" [label="right"];
+"y" -> "z" [label="right"];
+here
+balance_children called
+called with
+"o" -> "p" [label="right"];
+"p" -> "q" [label="right"];
+"q" -> "r" [label="right"];
+"r" -> "s" [label="right"];
+"s" -> "t" [label="right"];
+"t" -> "u" [label="right"];
+"u" -> "v" [label="right"];
+"v" -> "w" [label="right"];
+"w" -> "x" [label="right"];
+"x" -> "y" [label="right"];
+"y" -> "z" [label="right"];
+here
+there
+balanced called on o
+"o" -> "p" [label="right"];
+"p" -> "q" [label="right"];
+"q" -> "r" [label="right"];
+"r" -> "s" [label="right"];
+"s" -> "t" [label="right"];
+"t" -> "u" [label="right"];
+"u" -> "v" [label="right"];
+"v" -> "w" [label="right"];
+"w" -> "x" [label="right"];
+"x" -> "y" [label="right"];
+"y" -> "z" [label="right"];
 it's imbalanced
-shifting: 15
-balanced called on 14
-"14" -> "13" [label="left"];
-"13" -> "12" [label="left"];
-"12" -> "11" [label="left"];
-"11" -> "10" [label="left"];
-"10" -> "1" [label="left"];
-"14" -> "15" [label="right"];
+shifting: o
+balanced called on p
+"p" -> "o" [label="left"];
+"p" -> "q" [label="right"];
+"q" -> "r" [label="right"];
+"r" -> "s" [label="right"];
+"s" -> "t" [label="right"];
+"t" -> "u" [label="right"];
+"u" -> "v" [label="right"];
+"v" -> "w" [label="right"];
+"w" -> "x" [label="right"];
+"x" -> "y" [label="right"];
+"y" -> "z" [label="right"];
 it's imbalanced
-shifting: 14
-balanced called on 13
-"13" -> "12" [label="left"];
-"12" -> "11" [label="left"];
-"11" -> "10" [label="left"];
-"10" -> "1" [label="left"];
-"13" -> "14" [label="right"];
-"14" -> "15" [label="right"];
+shifting: p
+balanced called on q
+"q" -> "p" [label="left"];
+"p" -> "o" [label="left"];
+"q" -> "r" [label="right"];
+"r" -> "s" [label="right"];
+"s" -> "t" [label="right"];
+"t" -> "u" [label="right"];
+"u" -> "v" [label="right"];
+"v" -> "w" [label="right"];
+"w" -> "x" [label="right"];
+"x" -> "y" [label="right"];
+"y" -> "z" [label="right"];
 it's imbalanced
-shifting: 13
-balanced called on 12
-"12" -> "11" [label="left"];
-"11" -> "10" [label="left"];
-"10" -> "1" [label="left"];
-"12" -> "13" [label="right"];
-"13" -> "14" [label="right"];
-"14" -> "15" [label="right"];
+shifting: q
+balanced called on r
+"r" -> "q" [label="left"];
+"q" -> "p" [label="left"];
+"p" -> "o" [label="left"];
+"r" -> "s" [label="right"];
+"s" -> "t" [label="right"];
+"t" -> "u" [label="right"];
+"u" -> "v" [label="right"];
+"v" -> "w" [label="right"];
+"w" -> "x" [label="right"];
+"x" -> "y" [label="right"];
+"y" -> "z" [label="right"];
+it's imbalanced
+shifting: r
+balanced called on s
+"s" -> "r" [label="left"];
+"r" -> "q" [label="left"];
+"q" -> "p" [label="left"];
+"p" -> "o" [label="left"];
+"s" -> "t" [label="right"];
+"t" -> "u" [label="right"];
+"u" -> "v" [label="right"];
+"v" -> "w" [label="right"];
+"w" -> "x" [label="right"];
+"x" -> "y" [label="right"];
+"y" -> "z" [label="right"];
+it's imbalanced
+shifting: s
+balanced called on t
+"t" -> "s" [label="left"];
+"s" -> "r" [label="left"];
+"r" -> "q" [label="left"];
+"q" -> "p" [label="left"];
+"p" -> "o" [label="left"];
+"t" -> "u" [label="right"];
+"u" -> "v" [label="right"];
+"v" -> "w" [label="right"];
+"w" -> "x" [label="right"];
+"x" -> "y" [label="right"];
+"y" -> "z" [label="right"];
 balanced!
 why dont you stop!
+everywhere
+balance_children called
+called with
+"u" -> "v" [label="right"];
+"v" -> "w" [label="right"];
+"w" -> "x" [label="right"];
+"x" -> "y" [label="right"];
+"y" -> "z" [label="right"];
+here
+there
+balanced called on u
+"u" -> "v" [label="right"];
+"v" -> "w" [label="right"];
+"w" -> "x" [label="right"];
+"x" -> "y" [label="right"];
+"y" -> "z" [label="right"];
+it's imbalanced
+shifting: u
+balanced called on v
+"v" -> "u" [label="left"];
+"v" -> "w" [label="right"];
+"w" -> "x" [label="right"];
+"x" -> "y" [label="right"];
+"y" -> "z" [label="right"];
+it's imbalanced
+shifting: v
+balanced called on w
+"w" -> "v" [label="left"];
+"v" -> "u" [label="left"];
+"w" -> "x" [label="right"];
+"x" -> "y" [label="right"];
+"y" -> "z" [label="right"];
+balanced!
+why dont you stop!
+everywhere
+balance_children called
+called with
+"x" -> "y" [label="right"];
+"y" -> "z" [label="right"];
+here
+there
+balanced called on x
+"x" -> "y" [label="right"];
+"y" -> "z" [label="right"];
+it's imbalanced
+shifting: x
+balanced called on y
+"y" -> "x" [label="left"];
+"y" -> "z" [label="right"];
+balanced!
+why dont you stop!
+everywhere
+balance_children called
+called with
+"v" -> "u" [label="left"];
+here
+balance_children called
+called with
+"s" -> "r" [label="left"];
+"r" -> "q" [label="left"];
+"q" -> "p" [label="left"];
+"p" -> "o" [label="left"];
+here
+there
+balanced called on s
+"s" -> "r" [label="left"];
+"r" -> "q" [label="left"];
+"q" -> "p" [label="left"];
+"p" -> "o" [label="left"];
+it's imbalanced
+shifting: s
+balanced called on r
+"r" -> "q" [label="left"];
+"q" -> "p" [label="left"];
+"p" -> "o" [label="left"];
+"r" -> "s" [label="right"];
+it's imbalanced
+shifting: r
+balanced called on q
+"q" -> "p" [label="left"];
+"p" -> "o" [label="left"];
+"q" -> "r" [label="right"];
+"r" -> "s" [label="right"];
+balanced!
+why dont you stop!
+everywhere
+balance_children called
+called with
+"m" -> "l" [label="left"];
+"l" -> "k" [label="left"];
+"k" -> "j" [label="left"];
+"j" -> "i" [label="left"];
+"i" -> "h" [label="left"];
+"h" -> "g" [label="left"];
+"g" -> "f" [label="left"];
+"f" -> "e" [label="left"];
+"e" -> "d" [label="left"];
+"d" -> "c" [label="left"];
+"c" -> "b" [label="left"];
+"b" -> "a" [label="left"];
+here
+there
+balanced called on m
+"m" -> "l" [label="left"];
+"l" -> "k" [label="left"];
+"k" -> "j" [label="left"];
+"j" -> "i" [label="left"];
+"i" -> "h" [label="left"];
+"h" -> "g" [label="left"];
+"g" -> "f" [label="left"];
+"f" -> "e" [label="left"];
+"e" -> "d" [label="left"];
+"d" -> "c" [label="left"];
+"c" -> "b" [label="left"];
+"b" -> "a" [label="left"];
+it's imbalanced
+shifting: m
+balanced called on l
+"l" -> "k" [label="left"];
+"k" -> "j" [label="left"];
+"j" -> "i" [label="left"];
+"i" -> "h" [label="left"];
+"h" -> "g" [label="left"];
+"g" -> "f" [label="left"];
+"f" -> "e" [label="left"];
+"e" -> "d" [label="left"];
+"d" -> "c" [label="left"];
+"c" -> "b" [label="left"];
+"b" -> "a" [label="left"];
+"l" -> "m" [label="right"];
+it's imbalanced
+shifting: l
+balanced called on k
+"k" -> "j" [label="left"];
+"j" -> "i" [label="left"];
+"i" -> "h" [label="left"];
+"h" -> "g" [label="left"];
+"g" -> "f" [label="left"];
+"f" -> "e" [label="left"];
+"e" -> "d" [label="left"];
+"d" -> "c" [label="left"];
+"c" -> "b" [label="left"];
+"b" -> "a" [label="left"];
+"k" -> "l" [label="right"];
+"l" -> "m" [label="right"];
+it's imbalanced
+shifting: k
+balanced called on j
+"j" -> "i" [label="left"];
+"i" -> "h" [label="left"];
+"h" -> "g" [label="left"];
+"g" -> "f" [label="left"];
+"f" -> "e" [label="left"];
+"e" -> "d" [label="left"];
+"d" -> "c" [label="left"];
+"c" -> "b" [label="left"];
+"b" -> "a" [label="left"];
+"j" -> "k" [label="right"];
+"k" -> "l" [label="right"];
+"l" -> "m" [label="right"];
+it's imbalanced
+shifting: j
+balanced called on i
+"i" -> "h" [label="left"];
+"h" -> "g" [label="left"];
+"g" -> "f" [label="left"];
+"f" -> "e" [label="left"];
+"e" -> "d" [label="left"];
+"d" -> "c" [label="left"];
+"c" -> "b" [label="left"];
+"b" -> "a" [label="left"];
+"i" -> "j" [label="right"];
+"j" -> "k" [label="right"];
+"k" -> "l" [label="right"];
+"l" -> "m" [label="right"];
+it's imbalanced
+shifting: i
+balanced called on h
+"h" -> "g" [label="left"];
+"g" -> "f" [label="left"];
+"f" -> "e" [label="left"];
+"e" -> "d" [label="left"];
+"d" -> "c" [label="left"];
+"c" -> "b" [label="left"];
+"b" -> "a" [label="left"];
+"h" -> "i" [label="right"];
+"i" -> "j" [label="right"];
+"j" -> "k" [label="right"];
+"k" -> "l" [label="right"];
+"l" -> "m" [label="right"];
+it's imbalanced
+shifting: h
+balanced called on g
+"g" -> "f" [label="left"];
+"f" -> "e" [label="left"];
+"e" -> "d" [label="left"];
+"d" -> "c" [label="left"];
+"c" -> "b" [label="left"];
+"b" -> "a" [label="left"];
+"g" -> "h" [label="right"];
+"h" -> "i" [label="right"];
+"i" -> "j" [label="right"];
+"j" -> "k" [label="right"];
+"k" -> "l" [label="right"];
+"l" -> "m" [label="right"];
+balanced!
+why dont you stop!
+everywhere
+balance_children called
+called with
+"h" -> "i" [label="right"];
+"i" -> "j" [label="right"];
+"j" -> "k" [label="right"];
+"k" -> "l" [label="right"];
+"l" -> "m" [label="right"];
+here
+there
+balanced called on h
+"h" -> "i" [label="right"];
+"i" -> "j" [label="right"];
+"j" -> "k" [label="right"];
+"k" -> "l" [label="right"];
+"l" -> "m" [label="right"];
+it's imbalanced
+shifting: h
+balanced called on i
+"i" -> "h" [label="left"];
+"i" -> "j" [label="right"];
+"j" -> "k" [label="right"];
+"k" -> "l" [label="right"];
+"l" -> "m" [label="right"];
+it's imbalanced
+shifting: i
+balanced called on j
+"j" -> "i" [label="left"];
+"i" -> "h" [label="left"];
+"j" -> "k" [label="right"];
+"k" -> "l" [label="right"];
+"l" -> "m" [label="right"];
+balanced!
+why dont you stop!
+everywhere
+balance_children called
+called with
+"k" -> "l" [label="right"];
+"l" -> "m" [label="right"];
+here
+there
+balanced called on k
+"k" -> "l" [label="right"];
+"l" -> "m" [label="right"];
+it's imbalanced
+shifting: k
+balanced called on l
+"l" -> "k" [label="left"];
+"l" -> "m" [label="right"];
+balanced!
+why dont you stop!
+everywhere
+balance_children called
+called with
+"i" -> "h" [label="left"];
+here
+balance_children called
+called with
+"f" -> "e" [label="left"];
+"e" -> "d" [label="left"];
+"d" -> "c" [label="left"];
+"c" -> "b" [label="left"];
+"b" -> "a" [label="left"];
+here
+there
+balanced called on f
+"f" -> "e" [label="left"];
+"e" -> "d" [label="left"];
+"d" -> "c" [label="left"];
+"c" -> "b" [label="left"];
+"b" -> "a" [label="left"];
+it's imbalanced
+shifting: f
+balanced called on e
+"e" -> "d" [label="left"];
+"d" -> "c" [label="left"];
+"c" -> "b" [label="left"];
+"b" -> "a" [label="left"];
+"e" -> "f" [label="right"];
+it's imbalanced
+shifting: e
+balanced called on d
+"d" -> "c" [label="left"];
+"c" -> "b" [label="left"];
+"b" -> "a" [label="left"];
+"d" -> "e" [label="right"];
+"e" -> "f" [label="right"];
+balanced!
+why dont you stop!
+everywhere
+balance_children called
+called with
+"e" -> "f" [label="right"];
+here
+balance_children called
+called with
+"c" -> "b" [label="left"];
+"b" -> "a" [label="left"];
+here
+there
+balanced called on c
+"c" -> "b" [label="left"];
+"b" -> "a" [label="left"];
+it's imbalanced
+shifting: c
+balanced called on b
+"b" -> "a" [label="left"];
+"b" -> "c" [label="right"];
+balanced!
+why dont you stop!
+everywhere
 done second

@@ -117,10 +117,10 @@ int imbalanced_p(item* root){
 
 int balance(item** root_address, int (*cmp_fn)(item*, item*)){
     item* move = *root_address;
-    printf("balanced called on %s\n", (char*)move->data);
-    display(stdout, move);
+    printf("balanced called on %s\n", (char*)(*root_address)->data);
+    display(stdout, *root_address);
     write_dot_file("try.txt", move);
-    if(imbalanced_p(move)==0){
+    if(imbalanced_p(*root_address)==0){
         printf("balanced!\n");
         printf("why dont you stop!\n");
         /* if(strcmp((char*)move->data, "12")==0){ */

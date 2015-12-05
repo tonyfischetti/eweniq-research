@@ -55,12 +55,10 @@ int main(void){
     free(line);
 
     write_dot_file("one.txt", root);
-    balance(&root, cmp_fn);
-    printf("done first\n");
-    /* balance_children(&root, cmp_fn); */
+    balance_tree(&root, cmp_fn);
     /* balance(&(root->left), cmp_fn); */
-    item** something = &(root->left);
-    balance(something, cmp_fn);
+    /* balance(&(root->left), cmp_fn); */
+    /* balance(&(root->right), cmp_fn); */
     /* #<{(| balance(&(root->right), cmp_fn); |)}># */
     /* #<{(| balance_tree(&root, cmp_fn); |)}># */
     printf("done second\n");
