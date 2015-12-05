@@ -1,0 +1,8 @@
+strict digraph TheTree {
+"12" -> "11" [label="left"];
+"11" -> "10" [label="left"];
+"10" -> "1" [label="left"];
+"12" -> "13" [label="right"];
+"13" -> "14" [label="right"];
+"14" -> "15" [label="right"];
+}

@@ -71,6 +71,7 @@ void shift(item** root_address, const char* direction,
         int (*cmp_fn)(item*, item*)){
     item* replacement;
     item* move = *root_address;
+    printf("shifting: %s\n", (char*)move->data);
     if(strcmp(direction, "left")==0)
         replacement = move->right;
     else
@@ -97,6 +98,7 @@ void shift(item** root_address, const char* direction,
     else
         parent->right = replacement;
         
+    *root_address = replacement;
     return;
 }
 
@@ -116,20 +118,23 @@ int imbalanced_p(item* root){
 int balance(item** root_address, int (*cmp_fn)(item*, item*)){
     item* move = *root_address;
     printf("balanced called on %s\n", (char*)move->data);
-    if(strcmp((char*)move->data, "e")==0)
-        display(stdout, move);
-    if(strcmp((char*)move->data, "d")==0)
-        display(stdout, move);
+    display(stdout, move);
+    write_dot_file("try.txt", move);
     if(imbalanced_p(move)==0){
         printf("balanced!\n");
+        printf("why dont you stop!\n");
+        /* if(strcmp((char*)move->data, "12")==0){ */
+        /*         write_dot_file("try.txt", move); */
+        /*     exit(0); */
+        /* } */
         return 1;
     }
     printf("it's imbalanced\n");
-    if(imbalanced_p(move)==-1){
+    if(imbalanced_p(*root_address)==-1){
         shift(root_address, "right", cmp_fn);
         balance(root_address, cmp_fn);
     }
-    if(imbalanced_p(move)==1){
+    if(imbalanced_p(*root_address)==1){
         shift(root_address, "left", cmp_fn);
         balance(root_address, cmp_fn);
     }
@@ -155,8 +160,10 @@ int balance_children(item** root_address, int (*cmp_fn)(item*, item*)){
     int im_r = imbalanced_p(move->right);
     if(im_l == 0 && im_r == 0)
         return 1;
-    return (balance_children(&(move->left), cmp_fn) +
-            balance_children(&(move->right), cmp_fn));
+    return (balance_children(&(move->right), cmp_fn) +
+            balance_children(&(move->left), cmp_fn));
+    /* return (balance_children(&(move->left), cmp_fn) + */
+    /*         balance_children(&(move->right), cmp_fn)); */
 }
 
 int balance_tree(item** root_address, int (*cmp_fn)(item*, item*)){

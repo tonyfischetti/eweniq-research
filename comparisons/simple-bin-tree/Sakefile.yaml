@@ -4,7 +4,7 @@
 #! CC=gcc
 #! PROG=driver
 #! IMPLM=simple-bin-tree
-#! CFLAGS=-O3 -Wall -Wextra -pedantic
+#! CFLAGS=-O0 -g -ggdb -Wall -Wextra -pedantic
 #! LDFLAGS= 
 
 
@@ -18,7 +18,7 @@ compile:
         rm $PROG;
         $CC -c ${IMPLM}.c $CFLAGS -o ${IMPLM}.o;
         $CC -c ${PROG}.c $CFLAGS -o ${PROG}.o;
-        $CC -o $PROG ${PROG}.o ${IMPLM}.o;
+        $CC -o $PROG ${PROG}.o ${IMPLM}.o $CFLAGS;
         rm ${PROG}.o;
         rm ${IMPLM}.o;
     output:
