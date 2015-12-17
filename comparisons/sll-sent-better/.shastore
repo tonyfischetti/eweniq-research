@@ -1,8 +1,0 @@
----
-sake version: 0.9.6
-files:
-  eweniq: {sha: 12d3ea34a7e8503e730f0ad5ee18b14481e84aa3}
-  eweniq.c: {sha: 3eed34d39dd45711cb300e1d744e81ff0da90d98}
-  sll-recur-poly.c: {sha: bad1846243e60e1fcfb2a06a203390dfe7ef1130}
-  sll-recur-poly.h: {sha: 8731c96043764d9c9d1d3204d89b1a255db994cb}
-...

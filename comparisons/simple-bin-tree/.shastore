@@ -1,8 +1,0 @@
----
-sake version: 0.9.6
-files:
-  driver: {sha: e25749b7c5ad6f41517d1b0667edd17058ba6275}
-  driver.c: {sha: 8e331e74cfb3cf5687328150f9fa25c331be9199}
-  simple-bin-tree.c: {sha: 91be8028dea7a09547fd1578190bbb0594f4ebc9}
-  simple-bin-tree.h: {sha: eb516336f8b89eccf438e796b07edf8f7ef61c09}
-...

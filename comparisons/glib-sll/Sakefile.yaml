@@ -1,0 +1,33 @@
+
+
+#! CC1=clang-mp-3.7
+#! CC2=gcc
+#! PROG=eweniq
+#! CFLAGS1=-O0 -Wall -Wextra -pedantic
+#! CFLAGS2=-O3 -Wall -Wextra -pedantic
+#! LDFLAGS= -I/opt/local/include/glib-2.0 -I/opt/local/lib/glib-2.0/include -I/opt/local/include -L/opt/local/lib -lglib-2.0 -lintl
+
+
+compile:
+    help: compile
+    dependencies:
+        - ${PROG}.c 
+    formula: >
+        $CC1 -o $PROG eweniq.c $CFLAGS1 $LDFLAGS;
+        mv $PROG ${PROG}-clang-O0;
+        $CC2 -o $PROG eweniq.c $CFLAGS1 $LDFLAGS;
+        mv $PROG ${PROG}-gcc-O0;
+        $CC1 -o $PROG eweniq.c $CFLAGS2 $LDFLAGS;
+        mv $PROG ${PROG}-clang-O3;
+        $CC2 -o $PROG eweniq.c $CFLAGS2 $LDFLAGS;
+        mv $PROG ${PROG}-gcc-O3;
+        rm -rf eweniq.dSYM;
+    output:
+        - ${PROG}-clang-O0
+        - ${PROG}-gcc-O0
+        - ${PROG}-clang-O3
+        - ${PROG}-gcc-O3
+
+
+
+

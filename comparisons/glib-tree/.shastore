@@ -1,0 +1,9 @@
+---
+sake version: 0.9.6
+files:
+  eweniq-clang-O0: {sha: e5aad85c147186aa415c4cd45a0c5b5b2b673bc8}
+  eweniq-clang-O3: {sha: 5e21eb22dafb1b860a115a94fa669e6325c19e1f}
+  eweniq-gcc-O0: {sha: 8cea734624cdaf18258d1601b287ac06f8c21f68}
+  eweniq-gcc-O3: {sha: 959844d81db184c26384d016ece0a4a77597c6bf}
+  eweniq.c: {sha: 69dcc0a42514c8fcc8c7c9be56259477f47b8a91}
+...

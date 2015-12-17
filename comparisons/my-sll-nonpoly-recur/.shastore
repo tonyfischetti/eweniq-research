@@ -1,0 +1,11 @@
+---
+sake version: 0.9.6
+files:
+  eweniq-clang-O0: {sha: 6b1bb9fbae210a59273d534da4ba299e5a0346b0}
+  eweniq-clang-O3: {sha: 4f4d051a2106685392cf49c94563dc8ba8e148e2}
+  eweniq-gcc-O0: {sha: 1ade9c4cceec2af99139eae7c98b22091d35f987}
+  eweniq-gcc-O3: {sha: 6afec9cf3fc811adf6c3e1e0a7f6454e35032274}
+  eweniq.c: {sha: fd56c0ca727d92691096ebf716c37675a399e76e}
+  sll-recur-nonpoly.c: {sha: ffae3fc4d86a94b7bfd32cfe17ddb241c5ae7ed4}
+  sll-recur-nonpoly.h: {sha: 3d432af424b18de58fe54f53976c20fc4c083efa}
+...
