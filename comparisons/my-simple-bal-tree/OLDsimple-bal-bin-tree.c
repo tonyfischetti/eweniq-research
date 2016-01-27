@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
-#include "simple-bin-tree.h"
+#include "simple-bal-bin-tree.h"
 
 
 /*********************************************************************

@@ -1,0 +1,54 @@
+
+
+#! CC1=clang-mp-3.7
+#! CC2=gcc
+#! PROG=eweniq
+#! IMPLM=avl
+#! CFLAGS1=-O0 -Wall -Wextra -pedantic
+#! CFLAGS2=-O3 -Wall -Wextra -pedantic
+#! LDFLAGS= 
+
+
+compile:
+    help: compile
+    dependencies:
+        - ${PROG}.c 
+        - ${IMPLM}.c
+        - ${IMPLM}.h
+    formula: >
+        rm $PROG;
+        $CC1 -c ${IMPLM}.c $CFLAGS1 -o ${IMPLM}.o;
+        $CC1 -c ${PROG}.c $CFLAGS1 -o ${PROG}.o;
+        $CC1 -o $PROG ${PROG}.o ${IMPLM}.o;
+        rm ${PROG}.o;
+        rm ${IMPLM}.o;
+        mv $PROG ${PROG}-clang-O0;
+        $CC2 -c ${IMPLM}.c $CFLAGS1 -o ${IMPLM}.o;
+        $CC2 -c ${PROG}.c $CFLAGS1 -o ${PROG}.o;
+        $CC2 -o $PROG ${PROG}.o ${IMPLM}.o;
+        rm ${PROG}.o;
+        rm ${IMPLM}.o;
+        mv $PROG ${PROG}-gcc-O0;
+
+        $CC1 -c ${IMPLM}.c $CFLAGS2 -o ${IMPLM}.o;
+        $CC1 -c ${PROG}.c $CFLAGS2 -o ${PROG}.o;
+        $CC1 -o $PROG ${PROG}.o ${IMPLM}.o;
+        rm ${PROG}.o;
+        rm ${IMPLM}.o;
+        mv $PROG ${PROG}-clang-O3;
+        $CC2 -c ${IMPLM}.c $CFLAGS2 -o ${IMPLM}.o;
+        $CC2 -c ${PROG}.c $CFLAGS2 -o ${PROG}.o;
+        $CC2 -o $PROG ${PROG}.o ${IMPLM}.o;
+        rm ${PROG}.o;
+        rm ${IMPLM}.o;
+        mv $PROG ${PROG}-gcc-O3;
+
+    output:
+        - ${PROG}-clang-O0
+        - ${PROG}-gcc-O0
+        - ${PROG}-clang-O3
+        - ${PROG}-gcc-O3
+
+
+
+

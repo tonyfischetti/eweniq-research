@@ -11,14 +11,16 @@
 (require '[clojure.java.shell :as shell])
 
 
+(def default-reps 3)
+
 (def spacing "            ")
 
 (def tests ["testint.txt"
-            "somebody.txt"
-            "douglass.txt"
-            "of-human-bondage.txt"
-            ;; "words.txt"
-            ;; "shufwords.txt"
+            ;; "somebody.txt"
+            ;; "douglass.txt"
+            ;; "of-human-bondage.txt"
+            "words.txt"
+            "shufwords.txt"
             "nothing"])
 
 (def test-files (map (fn [post] (str "./test-files/" post)) tests))
@@ -26,14 +28,26 @@
 (def test-answers (map (fn [post] (str "./test-solutions/" post)) tests))
 
 
-(def all-implementations ["./comparisons/my-simple-bin-tree/eweniq-clang-O0"
-                          "./comparisons/my-simple-bin-tree/eweniq-clang-O3"
-                          "./comparisons/my-simple-bin-tree/eweniq-gcc-O0"
+(def all-implementations [;; "./comparisons/my-simple-bin-tree/eweniq-clang-O0"
+                          ;; "./comparisons/my-simple-bin-tree/eweniq-clang-O3"
+                          ;; "./comparisons/my-simple-bin-tree/eweniq-gcc-O0"
                           "./comparisons/my-simple-bin-tree/eweniq-gcc-O3"
-                          "./comparisons/my-sll-poly-recur/eweniq-clang-O0"
-                          "./comparisons/my-sll-poly-recur/eweniq-clang-O3"
-                          "./comparisons/my-sll-poly-recur/eweniq-gcc-O0"
-                          "./comparisons/my-sll-poly-recur/eweniq-gcc-O3"
+                          ;; "./comparisons/my-simple-bal-tree/eweniq-clang-O0 1000"
+                          ;; "./comparisons/my-simple-bal-tree/eweniq-clang-O3 1000"
+                          ;; "./comparisons/my-simple-bal-tree/eweniq-gcc-O0 1000"
+                          "./comparisons/my-simple-bal-tree/eweniq-gcc-O3 1000"
+                          ;; "./comparisons/my-simple-bal-tree/eweniq-clang-O0 2000"
+                          ;; "./comparisons/my-simple-bal-tree/eweniq-clang-O3 2000"
+                          ;; "./comparisons/my-simple-bal-tree/eweniq-gcc-O0 2000"
+                          "./comparisons/my-simple-bal-tree/eweniq-gcc-O3 2000"
+                          ;; "./comparisons/my-simple-bal-tree/eweniq-clang-O0 5000"
+                          ;; "./comparisons/my-simple-bal-tree/eweniq-clang-O3 5000"
+                          ;; "./comparisons/my-simple-bal-tree/eweniq-gcc-O0 5000"
+                          "./comparisons/my-simple-bal-tree/eweniq-gcc-O3 5000"
+                          ;; "./comparisons/my-sll-poly-recur/eweniq-clang-O0"
+                          ;; "./comparisons/my-sll-poly-recur/eweniq-clang-O3"
+                          ;; "./comparisons/my-sll-poly-recur/eweniq-gcc-O0"
+                          ;; "./comparisons/my-sll-poly-recur/eweniq-gcc-O3"
                           ;; "./comparisons/my-sll-poly-recur-sent-bad/eweniq-clang-O0"
                           ;; "./comparisons/my-sll-poly-recur-sent-bad/eweniq-clang-O3"
                           ;; "./comparisons/my-sll-poly-recur-sent-bad/eweniq-gcc-O0"
@@ -46,22 +60,34 @@
                           ;; "./comparisons/my-sll-nonpoly-recur/eweniq-clang-O3"
                           ;; "./comparisons/my-sll-nonpoly-recur/eweniq-gcc-O0"
                           ;; "./comparisons/my-sll-nonpoly-recur/eweniq-gcc-O3"
-                          "./comparisons/glib-sll/eweniq-clang-O0"
-                          "./comparisons/glib-sll/eweniq-clang-O3"
-                          "./comparisons/glib-sll/eweniq-gcc-O0"
-                          "./comparisons/glib-sll/eweniq-gcc-O3"
-                          "./comparisons/glib-tree/eweniq-clang-O0"
-                          "./comparisons/glib-tree/eweniq-clang-O3"
-                          "./comparisons/glib-tree/eweniq-gcc-O0"
-                          "./comparisons/glib-tree/eweniq-gcc-O3"
-                          "./other-implementations/eweniq-awk.sh"
-                          "./other-implementations/eweniq-perl.sh"])
+                          ;; "./comparisons/glib-sll/eweniq-clang-O0"
+                          ;; "./comparisons/glib-sll/eweniq-clang-O3"
+                          ;; "./comparisons/glib-sll/eweniq-gcc-O0"
+                          ;; "./comparisons/glib-sll/eweniq-gcc-O3"
+                          ;; "./comparisons/glib-tree/eweniq-clang-O0"
+                          ;; "./comparisons/glib-tree/eweniq-clang-O3"
+                          ;; "./comparisons/glib-tree/eweniq-gcc-O0"
+                          ;; "./comparisons/glib-tree/eweniq-gcc-O3"
+                          ;; "./comparisons/libavl-avl/eweniq-clang-O0"
+                          ;; "./comparisons/libavl-avl/eweniq-clang-O3"
+                          ;; "./comparisons/libavl-avl/eweniq-gcc-O0"
+                          "./comparisons/libavl-avl/eweniq-gcc-O3"
+                          ;; "./comparisons/libavl-rb/eweniq-clang-O0"
+                          ;; "./comparisons/libavl-rb/eweniq-clang-O3"
+                          ;; "./comparisons/libavl-rb/eweniq-gcc-O0"
+                          ;; "./comparisons/libavl-rb/eweniq-gcc-O3"
+                          ;; "./other-implementations/eweniq-awk.sh"
+                          ;; "./other-implementations/eweniq-perl.sh"
+                          ;; "./other-implementations/eweniq-list-py.py"
+                          ;; "./other-implementations/eweniq-dict-py.py"
+                          "./other-implementations/eweniq-set-py.py"
+                          ])
 
-(def implementations 
-  (filter (fn [s] (and (re-find #"O3" s) (re-find #"gcc" s))) all-implementations))
+;; (def implementations 
+;;   (filter (fn [s] (and (re-find #"O3" s) (re-find #"gcc" s))) all-implementations))
 
+(def implementations all-implementations)
 
-(def default-reps 20)
 
 
 (defn rep-each
@@ -78,14 +104,14 @@
 
 
 (defn construct-test-command [exe test-file]
-  (->> (apply str [exe "<" test-file])
+  (->> (apply str [exe " < " test-file])
        (list)
        (cons "-c")
        (cons "sh")))
 
 (defn construct-perf-command [exe test-file]
   (->> (apply str ["gtime --format 'used %M and took %e' "
-                   exe "<" test-file])
+                   exe " < " test-file])
        (list)
        (cons "-c")
        (cons "sh")))
