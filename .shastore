@@ -1,8 +1,0 @@
----
-sake version: 0.9.6
-files:
-  filter: {sha: 05f2b9c91c91bd26e0cbc76296625ed80bec48ab}
-  filter.c: {sha: 5adf8a43ed0599f659f6dd80ec570c91ce20b947}
-  sll.c: {sha: 79635381486ac10a4d213dd0a3245491c9e499aa}
-  sll.h: {sha: c24b45427cf438ad3b9793559cd653cc7ae7e10e}
-...
